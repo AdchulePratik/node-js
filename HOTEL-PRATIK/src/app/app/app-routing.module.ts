@@ -9,9 +9,12 @@ import { SIGNINComponent } from '../signin/signin.component';
 import { SIGNUPComponent } from '../signup/signup.component';
 import { HOMEPAGEComponent } from '../homepage/homepage.component';
 
-const newLocal = './admin/admin.module';
+
 const routes: Routes = [
-  {path:'home',component:HOMEPAGEComponent},
+  {path:'',component:HOMEPAGEComponent},
+  {path:'admin',component:AdminComponent},
+  {path:'owner',component:OwnerComponent},
+  {path:'user',component:UserComponent},
   {path:'signin',component:SIGNINComponent},
   {path:'signup',component:SIGNUPComponent},
 

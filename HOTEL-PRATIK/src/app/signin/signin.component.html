@@ -1,1 +1,45 @@
 <p>signin works!</p>
+
+<form class="loginform" [formGroup]="loginform">
+
+  <h2> Login form</h2>
+
+  <mat-form-field>
+          <mat-label>USERNAME</mat-label>
+          <input matInput formControlName="username">
+          <mat-error *ngIf="loginform.get('username')?.touched && loginform.get('username')?.errors?.['required']">Name is required</mat-error>
+          <mat-error *ngIf="loginform.get('username')?.errors?.['minilength']">Minimum 2 charactors required</mat-error>
+          <mat-error *ngIf="loginform.get('username')?.errors?.['pattern']">Please enter alphabets only</mat-error>
+</mat-form-field> <br>
+
+<mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password">
+          <mat-error *ngIf="loginform.get('password')?.touched && loginform.get('password')?.errors?.['required']">Please enter password</mat-error>
+</mat-form-field><br>
+
+<button mat-raised-button color="warn" [disabled]="loginform.invalid" (click)="submit()">Submit</button>
+<br>
+<a routerLink="/signup">Not have account click here</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
